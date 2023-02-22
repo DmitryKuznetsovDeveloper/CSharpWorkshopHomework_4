@@ -2,23 +2,24 @@
 // 452 -> 11
 // 82 -> 10
 // 9012 -> 12
-int InputUserNumber() // Метод Получения числа 
+int InputUser(string msg)
 {
-    Console.Write($"Введите число  --> ");
-    return Convert.ToInt32(Console.ReadLine());
+    System.Console.Write($"{msg}  --> ");
+    int userNumber = Convert.ToInt32(Console.ReadLine());
+    return userNumber;
 }
 
-int SumDigitNumbers(int num)
+int SumDigitNumbers(int num) // Метод подсчета цифр в числе
 {
-    int result = 0;
-    while (num > 0)
+    int result = 0;  // объявляем и инициализируем переменную в которую будем класть результат
+    while (num > 0)  // цикл перебора числа
     {
-        int digit = num % 10;
-        num /= 10;
-        result += digit;
+        int digit = num % 10; // получаем последнюю цифру числа и кладем ее в переменную
+        num /= 10;           //  отсекаем последнюю цифру числа
+        result += digit;     //  складываем цифру в переменную 
     }
-    return result;
+    return result;          // возвращаем значение
 }
 
-int userNumber = InputUserNumber();
+int userNumber = InputUser("Введите число из которово мы посчитаем сумм цифр");
 Console.WriteLine($"В числе {userNumber} сумма цифр = {SumDigitNumbers(userNumber)}");
