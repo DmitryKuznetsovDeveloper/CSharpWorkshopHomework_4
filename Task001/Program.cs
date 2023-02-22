@@ -13,13 +13,26 @@
 
 int DegreeNumber(int num, int degreeNumber) // Метод возведения в степень
 {
-    int result = num;
-    for (int i = 1; i < degreeNumber; i++)
+    int result = 1;
+    for (int i = 0; i < degreeNumber; i++)
     {
         result *= num;
     }
     return result;
 }
 
+bool ValidateDegree(int degree)
+{
+    if (degree < 0)
+    {
+        Console.WriteLine("Степень не должна быть меньше нуля");
+        return false;
+    }
+    return true;
+}
+
 (int number, int degreeNumber) userNumber = InputUserNumberDegree();
-Console.WriteLine($"Число {userNumber.number} в степени {userNumber.degreeNumber} = {DegreeNumber(userNumber.number, userNumber.degreeNumber)}");
+if (ValidateDegree(userNumber.degreeNumber))
+{
+    Console.WriteLine($"Число {userNumber.number} в степени {userNumber.degreeNumber} = {DegreeNumber(userNumber.number, userNumber.degreeNumber)}");
+}

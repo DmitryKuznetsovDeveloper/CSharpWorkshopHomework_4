@@ -9,11 +9,11 @@ int InputUser(string msg)
     return userNumber;
 }
 
-void FillArray(int[] array)
+void FillArray(int[] array, int minNumber, int maxNumber)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(1, 34);
+        array[i] = new Random().Next(minNumber, maxNumber + 1);
     }
 }
 
@@ -27,6 +27,8 @@ void PrintArray(int[] array)
 }
 
 int userNumber = InputUser("Введите количесво элементов в массиве");
+int minNumber = InputUser("Введите минимальное значение массива");
+int maxNumber = InputUser("Введите максимальное значение массива");
 int[] myArray = new int[userNumber];
-FillArray(myArray);
+FillArray(myArray, minNumber, maxNumber);
 PrintArray(myArray);
