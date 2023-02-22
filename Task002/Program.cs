@@ -21,5 +21,5 @@ int SumDigitNumbers(int num) // Метод подсчета цифр в числ
     return result;          // возвращаем значение
 }
 
-int userNumber = InputUser("Введите число из которово мы посчитаем сумм цифр");
+int userNumber = InputUser("Введите число из которово мы посчитаем сумму цифр");
 Console.WriteLine($"В числе {userNumber} сумма цифр = {SumDigitNumbers(userNumber)}");
